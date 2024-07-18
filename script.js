@@ -49,9 +49,6 @@ function RunScript() {
                         item.dispatchEvent(event);
                         document.querySelector(".im-button--mod-primary.window-confirm__dialog-btn-ok__im-button.im-button").click();
     
-                        console.log("i = ", i);
-                        console.log("length = ", messagesToDelete.length);
-    
                         // Recheck for more due to certain messages being hidden based on scrollview and client side code.
                         if (i === messagesToDelete.length) {
                             window.StartDeleting();
