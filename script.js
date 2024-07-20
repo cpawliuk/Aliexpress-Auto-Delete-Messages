@@ -4,7 +4,8 @@
 // @version      1.0
 // @description  Simple script to auto delete messages on Aliexpress.
 // @author       Christopher Pawliuk
-// @match        *://message.aliexpress.com/buyerMsgListNew*
+// @match        *://message.aliexpress.com/*
+// @match        *://msg.aliexpress.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=aliexpress.com
 // @grant        none
 // ==/UserScript==
@@ -26,11 +27,6 @@ function RunScript() {
     window.StartDeleting = () => {
         newElement.innerHTML = `<b>Running Aliexpress Message Delete Script -> Deleting Messages . . .`;
         let messagesToDelete = Array.from(document.querySelectorAll(".btn-delete > svg > path"));
-    
-        if (messagesToDelete.length < 1) {
-            newElement.innerHTML = `<b>Running Aliexpress Message Delete Script -> All Messages Deleted`;
-            return; // If the node list was empty then quit.
-        }
     
         const event = new MouseEvent("click", {
             bubbles: true,
