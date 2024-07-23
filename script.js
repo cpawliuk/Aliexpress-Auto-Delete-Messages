@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Aliexpress Auto Message Deleter
 // @website      https://github.com/cpawliuk/Aliexpress-Auto-Delete-Messages
-// @version      1.0
+// @version      1.1
 // @description  Simple script to auto delete messages on Aliexpress.
 // @author       Christopher Pawliuk
 // @match        *://message.aliexpress.com/*
@@ -21,7 +21,7 @@ newElement.innerHTML = `<b>Running Aliexpress Message Delete Script -> Please Wa
 document.getElementById("top-lighthouse").prepend(newElement);
 window.scrollTo(0, 0);
 
-addEventListener("load", setTimeout(RunScript, 3000)); // Set the timeout higher if needed due to the client side delay in loading the components.
+addEventListener("load", function() { setTimeout(RunScript, 3000); }); // Set the timeout higher if needed due to the client side delay in loading the components.
 
 function RunScript() {
     window.StartDeleting = () => {
