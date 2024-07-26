@@ -17,7 +17,7 @@ const newElement = document.createElement("div");
 newElement.id = "script-ui";
 newElement.style.color = "white";
 newElement.style.backgroundColor = "black";
-newElement.innerHTML = `<b>Running Aliexpress Message Delete Script -> Please Wait . . .`;
+newElement.innerHTML = `<span>Running Aliexpress Message Delete Script -> Please Wait . . .</span>`;
 document.getElementById("top-lighthouse").prepend(newElement);
 window.scrollTo(0, 0);
 
@@ -25,7 +25,7 @@ addEventListener("load", function() { setTimeout(RunScript, 3000); }); // Set th
 
 function RunScript() {
     window.StartDeleting = () => {
-        newElement.innerHTML = `<b>Running Aliexpress Message Delete Script -> Deleting Messages . . .`;
+        newElement.innerHTML = `<span>Running Aliexpress Message Delete Script -> Deleting Messages . . .</span>`;
         let messagesToDelete = Array.from(document.querySelectorAll(".btn-delete > svg > path"));
     
         const event = new MouseEvent("click", {
@@ -58,5 +58,5 @@ function RunScript() {
     };
     
     window.scrollTo(0, 0);
-    newElement.innerHTML = `<b>Running Aliexpress Message Delete Script -> </b><button id="start-button" onClick="window.StartDeleting()">Start</button>`;
+    newElement.innerHTML = `<span>Running Aliexpress Message Delete Script -> <button id="start-button" onClick="window.StartDeleting()">Start</button></span>`;
 }
